@@ -11,8 +11,6 @@ const express = require('express'),
   // http = require('http'),
   cookieParser = require("cookie-parser"),
   bodyParser = require("body-parser"),
-  cors = require('cors'),
-  tokenAuthenticator = require("./tokenAuthenticator"),
   app = express(),
   https = require('https').createServer({key:fs.readFileSync(config.key_path), cert:fs.readFileSync(config.cert_path), passphrase : "test"}, app),
   debug = require("./util/log")(module);
@@ -20,8 +18,6 @@ const express = require('express'),
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(cors());
-app.use(tokenAuthenticator);
 
 app.use('/', express.static(__dirname+'/public'));
 https.listen (config.port)
