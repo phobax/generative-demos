@@ -1,0 +1,27 @@
+{
+  "name": "simple_https",
+  "version": "0.0.1",
+  "private": true,
+  "description": "boilerplate for https user-testing server",
+  "keywords": [],
+  "author": "max.goettner@vw-fc.com",
+  "license": "",
+  "main": "./src/index.js",
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "express": "^4.12.3",
+    "https": "^1.0.0",
+    "querystring": "^0.2.0",
+    "request-promise": "^4.2.2",
+    "ssh-deploy-release": "^3.0.0",
+    "xstate": "^4.6.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  },
+  "scripts": {
+    "start": "nodemon ./src/index.js",
+    "deploy": "node deploy.js deploy"
+  }
+}
